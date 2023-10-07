@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "name": "Wedding",
+      "image": "https://i.ibb.co/0Mh9sZK/couple-white-wedding-dress-white-suit-873925-21588.jpg",
+      "short_description": "Celebrate the union of two souls in a magical ceremony.",
+      "details_description": "A wedding is a beautiful celebration of love and commitment. It involves a ceremony where two people pledge their love and commitment to each other. Whether you're planning an intimate gathering or a grand affair, we're here to make your special day memorable.",
+      "price": 1000
+    },
+    {
+      "id": 2,
+      "name": "Birthday Party",
+      "image": "https://i.ibb.co/6HXvDXq/1000-F-108077044-WNIv2fu0-HEw-Pa-C6d-Y7v4-Vm8fr-P91w-L7-J.jpg",
+      "short_description": "Celebrate another year of life with friends and family.",
+      "details_description": "A birthday party is a joyous occasion to celebrate another year of life. It's a time to gather with friends and family, enjoy delicious food, and create lasting memories. Whether it's a milestone birthday or a casual get-together, we'll help you plan a party that reflects your personality and style.",
+      "price": 1000
+    },
+    {
+      "id": 3,
+      "name": "Anniversary",
+      "image": "https://i.ibb.co/n73Zjrc/1000-F-129858096-Yyie-Of-Xk-G18-G4-C0dxh-B6-Tw-Sbw7n3-Nv-Gm.jpg",
+      "short_description": "Commemorate years of togetherness and cherished moments.",
+      "details_description": "An anniversary is a special milestone that deserves to be celebrated. It's a time to reflect on the journey you've shared and to look forward to the future. Whether it's your first year together or a golden anniversary, we'll help you plan an event that captures the essence of your love story.",
+      "price": 1000
+    },
+    {
+      "id": 4,
+      "name": "Engagement Party",
+      "image": "https://i.ibb.co/PNdGnBd/gdkfgjhkdfjghf.jpg",
+      "short_description": "Announce your commitment surrounded by loved ones.",
+      "details_description": "An engagement party is a wonderful way to share the excitement of your commitment with family and friends. It's a time to celebrate your love story and the journey ahead. Whether you prefer an intimate gathering or a lively celebration, we'll help you create an event that sets the perfect tone for your future together.",
+      "price": 1000
+    },
+    {
+      "id": 5,
+      "name": "Retirement Party",
+      "image": "https://i.ibb.co/n73Zjrc/1000-F-129858096-Yyie-Of-Xk-G18-G4-C0dxh-B6-Tw-Sbw7n3-Nv-Gm.jpg",
+      "short_description": "Bid farewell to a valued colleague and welcome a new chapter.",
+      "details_description": "A retirement party is a heartfelt way to honor the achievements and contributions of a valued colleague. It's a time to celebrate their accomplishments and wish them well in their new journey. Whether you're planning a casual gathering or a formal event, we'll help you create a memorable farewell.",
+      "price": 1000
+    },
+    {
+      "id": 6,
+      "name": "Baby Shower",
+      "image": "https://i.ibb.co/jhP3cQG/istockphoto-1466720977-1024x1024.jpg",
+      "short_description": "Celebrate the upcoming arrival of a bundle of joy.",
+      "details_description": "A baby shower is a joyous occasion to celebrate the imminent arrival of a new family member. It's a time to shower the parents-to-be with love, well wishes, and practical gifts. Whether you prefer a themed event or a traditional gathering, we'll help you plan a baby shower that's filled with warmth and excitement.",
+      "price": 1000
+    }
+  ]
