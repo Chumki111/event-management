@@ -7,6 +7,8 @@ import SingleCard from "../Components/Features/SingleCard";
 import ErrorPage from "../Pages/Error/ErrorPage";
 import Login from "../Components/Path/Login";
 import Register from "../Components/Path/Register";
+import PrivetRoute from "./PrivetRoute";
+import Gallery from "../Pages/Gallery/Gallery";
 
  
  const myCreatedRoute = createBrowserRouter([
@@ -22,7 +24,7 @@ import Register from "../Components/Path/Register";
             },
             {
               path : '/feature/:id',
-              element : <SingleCard></SingleCard>,
+              element : <PrivetRoute><SingleCard></SingleCard></PrivetRoute>,
               loader : () => fetch('/data.json')
 
             },
@@ -41,6 +43,10 @@ import Register from "../Components/Path/Register";
             {
                 path :'/register',
                 element : <Register></Register>
+            },
+            {
+                path :'/gallery',
+                element : <PrivetRoute><Gallery></Gallery></PrivetRoute>
             }
         ]
     }

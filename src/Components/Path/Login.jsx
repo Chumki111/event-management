@@ -1,7 +1,13 @@
-import { Link } from "react-router-dom";
+import { useContext } from "react";
+import toast from "react-hot-toast";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/UserContext";
 
 
 const Login = () => {
+    const {signInUser} = useContext(AuthContext)
+    const location = useLocation();
+    const navigate= useNavigate()
     const handleLogin = e =>{
         e.preventDefault()
         console.log(e.currentTarget)
@@ -9,6 +15,24 @@ const Login = () => {
         const email = form.get('email')
         const password = form.get('password')
         console.log(email,password)
+        
+
+        
+   
+    signInUser(email,password)
+    .then(result =>{
+        console.log(result.user)
+        toast.success('login successfully')
+        navigate(location?.state ? location.state : '/')
+       
+       
+    })
+    .catch(error =>{
+        console.error(error)
+       toast.error('email and password does not match with register email and password')
+        
+     })
+
     }
     return (
         <div>
@@ -33,12 +57,12 @@ const Login = () => {
                                 </label> */}
                         </div>
                         <div className="form-control mt-6">
-                            <button type="submit" className="btn btn-primary">Login</button>
+                            <button type="submit" className="btn bg-[#FBBF24]">Login</button>
                         </div>
 
                         <div className="text-center mt-4">
 
-                            <p className=" text-base">Dont’t Have An Account ? <Link to='/register' className=""><button className=" btn-link text-red-400">Create an Account</button></Link></p>
+                            <p className=" text-base">Dont’t Have An Account ? <Link to='/register' className=""><button className=" btn-link text-[#FBBF24]">Create an Account</button></Link></p>
                         </div>
 
 

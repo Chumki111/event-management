@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../Context/UserContext";
 
 
 const Navbar = () => {
@@ -34,8 +36,21 @@ const Navbar = () => {
                 Blogs
             </NavLink>
         </li>
+        <li>
+            <NavLink
+                to="/gallery"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "bg-amber-500 text-white" : ""
+                }
+            >
+                Gallery
+            </NavLink>
+        </li>
 
     </>
+
+const {logOut,user} = useContext(AuthContext)
+console.log(user)
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -59,7 +74,24 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                   <Link to='/login'> <button className="btn bg-amber-400">Login</button></Link>
+                {
+                        user?.email ? <>
+                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                <div className="w-10 rounded-full">
+                                    <img src="https://i.ibb.co/5n2xQzt/300.jpg" alt="" />
+                                </div>
+                            </label>
+                            <button className="btn btn-sm  btn-ghost">{user.displayName}</button>
+                           <Link to='/'> <button className="btn  btn-ghost"
+                                        onClick={logOut}
+                                    >Logout</button></Link>
+                            </>
+                       
+                            :
+                            <Link to='/login'>
+                                <button className="btn bg-[#FBBF24]">Login</button>
+                            </Link>
+                    }
                 </div>
             </div>
         </div>
@@ -67,3 +99,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
