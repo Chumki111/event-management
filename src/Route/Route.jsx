@@ -4,12 +4,16 @@ import Home from "../Pages/Home/Home";
 import About from "../Pages/About/About";
 import Blogs from "../Pages/Blogs/Blogs";
 import SingleCard from "../Components/Features/SingleCard";
+import ErrorPage from "../Pages/Error/ErrorPage";
+import Login from "../Components/Path/Login";
+import Register from "../Components/Path/Register";
 
  
  const myCreatedRoute = createBrowserRouter([
     {
         path : '/',
         element :<MainLayout></MainLayout>,
+        errorElement : <ErrorPage></ErrorPage>,
         children : [
             {
                 path : '/',
@@ -29,6 +33,14 @@ import SingleCard from "../Components/Features/SingleCard";
             {
                   path : '/blogs'
                   ,element :<Blogs></Blogs>
+            },
+            {
+                path : '/login',
+                element : <Login></Login>
+            },
+            {
+                path :'/register',
+                element : <Register></Register>
             }
         ]
     }
