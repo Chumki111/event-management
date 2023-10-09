@@ -78,7 +78,7 @@ console.log(user)
                         user?.email ? <>
                             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                                 <div className="w-10 rounded-full">
-                                    <img src="https://i.ibb.co/5n2xQzt/300.jpg" alt="" />
+                                    <img src={user.photoURL} alt="" />
                                 </div>
                             </label>
                             <button className="btn btn-sm  btn-ghost">{user.displayName}</button>

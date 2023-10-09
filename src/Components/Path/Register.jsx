@@ -2,19 +2,20 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 import toast from "react-hot-toast";
-
+import { FcGoogle} from 'react-icons/fc';
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-    const {  createUser } = useContext(AuthContext)
+    const {  createUser,signInGoogle } = useContext(AuthContext)
     const handleRegister = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
-        const firstName = form.get('first name')
-        const lastName = form.get('last name')
+        const name = form.get('name')
+        const photoURL = form.get('photoURL')
         const email = form.get('email')
         const password = form.get('password')
         const confirmPassword = form.get('conform password')
-        console.log(lastName, firstName, email, password, confirmPassword)
+        
 
 
          // validation
@@ -25,10 +26,19 @@ const Register = () => {
             toast.error('password and conform password same na')
             return;
         }
+        // createUser
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
                 toast.success('Created an account successfully')
+               
+                // update PhotoURl
+                updateProfile(result.user,{
+                    displayName : name,
+                    photoURL : photoURL,
+                })
+                .then()
+                .catch()
                 
             })
             .catch(error => {
@@ -36,6 +46,16 @@ const Register = () => {
                 toast.error('Email already in use')
             
             })
+    }
+
+    const handleGoogle =() =>{
+        signInGoogle()
+        .then(result =>{
+            console.log(result.user)
+        })
+        .catch(error =>{
+            console.error(error)
+        })
     }
     return (
         <>
@@ -50,7 +70,19 @@ const Register = () => {
                                 <label className="label">
                                     <span className="label-text"></span>
                                 </label>
-                                <input type="email" placeholder="UserName or Email" className="py-4 border-b " name="email" required />
+                                <input type="text" placeholder="UserName" className="py-4 border-b " name="name" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text"></span>
+                                </label>
+                                <input type="text" placeholder="Photo URL" className="py-4 border-b " name="photoURL" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text"></span>
+                                </label>
+                                <input type="email" placeholder="Email" className="py-4 border-b " name="email" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
@@ -76,9 +108,16 @@ const Register = () => {
 
                                 <p className=" text-base">Aready Have An Account ? <Link to='/login' className=""><button className=" btn-link text-amber-400">Login</button></Link></p>
                             </div>
+                            <div className="divider">OR</div>
+                   <div className="text-center">
+                   <button onClick={handleGoogle} className="btn  capitalize rounded-full w-9/12">
+                        <FcGoogle className="text-2xl "></FcGoogle>
+                      <span> Continue With Google
+                    </span>
+                    </button>
+                       </div>
 
-
-
+                       
 
                         </form>
 

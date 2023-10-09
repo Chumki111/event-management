@@ -9,7 +9,7 @@ const Banner = () => {
                 <div className="hero-content text-center text-neutral-content">
                     <div className="max-w-md">
                         <h1 className="mb-5 text-5xl  text-amber-400 font-bold">We create</h1>
-                        <h1 className="mb-5  text-5xl mr-32 font-bold">You  </h1>
+                        <h1 className="mb-5  text-5xl font-bold">You  </h1>
                         <h1 className="mb-5  text-5xl  font-bold">celebrate</h1>
                         <p className="mb-5 text-center">Planing a wedding,proposal or event in our busy city is not so easy and it takes skills to make it all look easy going</p>
                         <Link to='/register'><button className="btn capitalize bg-[#FBBF24]">Registration Now</button></Link>
