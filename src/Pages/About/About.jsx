@@ -1,3 +1,4 @@
+import Rechart from "../Blogs/Rechart";
 
 
 const About = () => {
@@ -85,6 +86,10 @@ const About = () => {
                             </div>
                         </div>
                        </div>
+                    </div>
+                    <div className="mt-10">
+                        <h1 className="text-4xl text-center font-bold">Our Order Rating</h1>
+                    <Rechart></Rechart>
                     </div>
                 </div>
             </div>

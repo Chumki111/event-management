@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/UserContext";
 import toast from "react-hot-toast";
 import { FcGoogle} from 'react-icons/fc';
@@ -7,6 +7,7 @@ import { updateProfile } from "firebase/auth";
 
 const Register = () => {
     const {  createUser,signInGoogle } = useContext(AuthContext)
+    const navigate = useNavigate()
     const handleRegister = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -31,7 +32,7 @@ const Register = () => {
             .then(result => {
                 console.log(result.user)
                 toast.success('Created an account successfully')
-               
+                navigate('/')
                 // update PhotoURl
                 updateProfile(result.user,{
                     displayName : name,
@@ -89,9 +90,7 @@ const Register = () => {
                                     <span className="label-text"></span>
                                 </label>
                                 <input type="password" placeholder="Password" className="py-4 border-b " name="password" required />
-                                {/* <label className="label">
-                                
-                            </label> */}
+                               
                             </div>
                             <div className="form-control">
                                 <label className="label">

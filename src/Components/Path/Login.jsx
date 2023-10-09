@@ -63,9 +63,7 @@ const Login = () => {
                                 <span className="label-text"></span>
                             </label>
                             <input type="password" placeholder="Password" className="py-4 border-b " name="password" required />
-                            {/* <label className="label">
-                                    
-                                </label> */}
+                            
                         </div>
                         <div className="form-control mt-6">
                             <button type="submit" className="btn bg-[#FBBF24]">Login</button>

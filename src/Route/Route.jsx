@@ -34,7 +34,7 @@ import Gallery from "../Pages/Gallery/Gallery";
             },
             {
                   path : '/blogs'
-                  ,element :<Blogs></Blogs>
+                  ,element :<PrivetRoute><Blogs></Blogs></PrivetRoute>
             },
             {
                 path : '/login',
