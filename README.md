@@ -7,4 +7,4 @@ I'll need some context about the type of project you're referring too. However, 
 -integrate a secure payment gateway to facilitate transactions or subscriptions within the application.
 -Allow users to upload, manage, and access files, images, or documents securely
 
-- [event-management-assignm-d1372](https://event-management-assignm-d1372.firebaseapp.com/) Live link
+- [https://event-management-assignm-d1372.firebaseapp.com/](https://event-management-assignm-d1372.firebaseapp.com/) Live link
